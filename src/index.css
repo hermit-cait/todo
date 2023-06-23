@@ -10,7 +10,7 @@ body {
 }
 
 h1,
-h1,
+h2,
 label,
 input,
 button {  
@@ -55,7 +55,7 @@ button,
 }
 
 .app-wrapper {
-  background-color: #EEEBFF;
+  background-color: mediumslateblue;
   border-radius: 2rem;
   width: 30rem;  
   margin: 0 auto;
