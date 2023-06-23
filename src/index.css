@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+body {
+  background-image: url("background.png");
+  background-size: 32rem;
+  margin: 0;
+  font-family: Rubik;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h1,
+label,
+input,
+button {  
+  font-family: Rubik;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+input,
+button,
+::placeholder {
+  font-size: 1rem;
+}
+
+.todo-label {
+  word-break: break-all;
+}
+
+.checkbox-wrapper {
+  max-width: 12rem;
+}
+
+.todo-name {  
+  line-height: 1.7rem;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+.app-wrapper {
+  background-color: #EEEBFF;
+  border-radius: 2rem;
+  width: 30rem;  
+  margin: 0 auto;
+  margin-block: 4rem;
+  padding-block: 1rem 2rem;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.todo-form {
+  margin-block-end: 2rem;
+}
+
+input,
+button {
+  margin: 0.5rem;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+
+
+.input-wrapper {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.viewTemplate {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 2rem;
+}
+
+.checkbox-wrapper {
+  width: fit-content;
+}
+
+.btn-group-view {
+  width: fit-content;
+}
+
+.editingTemplate {  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 2rem;
+}
+
+input.todo-text {
+  background-color: transparent;
+  width: fit-content;
+  margin-inline-start: 1.2rem;
+}
+
+.clearButton {
+  width: max-content;
+  margin: 0 auto;
+  margin-block-end: 0.2rem;
+}
