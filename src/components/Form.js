@@ -26,11 +26,9 @@ function Form(props) {
 
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
-        <h2 className="label-wrapper">
-          <label htmlFor="new-todo-input" className="new-todo-input">
-            Add a task:
-          </label>
-        </h2>
+        <label htmlFor="new-todo-input" className="new-todo-input">
+          <h2>Add a task:</h2>
+        </label>
         <div className="input-wrapper">
           <input
             type="text"

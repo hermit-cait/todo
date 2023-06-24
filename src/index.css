@@ -17,18 +17,15 @@ label,
 input,
 button,
 span {  
-  font-family: Rubik;
+  font-family: Rubik;  
 }
 
 h1::selection,
 h2::selection,
 label::selection,
 input::selection,
+button::selection,
 span::selection { 
-  background-color: #3fffb2;
-}
-
-.checkbox {
   background-color: #3fffb2;
 }
 
@@ -42,9 +39,10 @@ h2 {
 }
 
 input,
+label,
 button,
 ::placeholder {
-  font-size: 1rem;
+  font-size: 1.4rem;    
 }
 
 li {
@@ -56,7 +54,12 @@ li {
 }
 
 .todo-name {  
-  line-height: 1.7rem;
+  line-height: 2rem;
+}
+
+input:focus,
+button:focus {  
+  outline: 4px solid #8400ff;
 }
 
 .visually-hidden {
@@ -120,7 +123,7 @@ ul {
 }
 
 .checkbox-wrapper {
-  width: fit-content;
+  width: auto;
 }
 
 .btn-group-view {
@@ -155,6 +158,10 @@ input.todo-text {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+  
+  .checkbox-wrapper {
+    width: clamp(50%, calc(90% - 9rem), 60%);
   }
 
   .clearButton {
