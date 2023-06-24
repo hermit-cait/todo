@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 
 const DATA = [
-  { id: "todo-0", name: "Wake up", completed: true },
-  { id: "todo-1", name: "Have a shower", completed: false },
+  { id: "todo-0", name: "Write code", completed: true },
+  { id: "todo-1", name: "Drink coffee", completed: false },
   { id: "todo-2", name: "Be awesome", completed: false },
 ];
 

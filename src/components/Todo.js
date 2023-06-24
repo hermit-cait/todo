@@ -73,7 +73,7 @@ function Todo(props) {
           onChange={() => props.toggleTaskCompleted(props.id)}
         />
         <label className="todo-label" htmlFor={props.id}>
-        <span className="todo-name" style={{ textDecoration: props.completed ? "line-through" : "" }}>{props.name}</span>
+        <span className="todo-name" style={{ textDecoration: props.completed ? "line-through" : "" }}> {props.name}</span>
         </label>
       </span>
       <span className="btn-group-view">

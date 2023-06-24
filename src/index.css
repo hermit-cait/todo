@@ -9,12 +9,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* TEXT STYLES */
+
 h1,
 h2,
 label,
 input,
-button {  
+button,
+span {  
   font-family: Rubik;
+}
+
+h1::selection,
+h2::selection,
+label::selection,
+input::selection,
+span::selection { 
+  background-color: #3fffb2;
+}
+
+.checkbox {
+  background-color: #3fffb2;
 }
 
 h1 {
@@ -32,12 +47,12 @@ button,
   font-size: 1rem;
 }
 
-.todo-label {
-  word-break: break-all;
+li {
+  list-style: none;
 }
 
-.checkbox-wrapper {
-  max-width: 12rem;
+.todo-label {
+  word-break: break-all;
 }
 
 .todo-name {  
@@ -54,10 +69,12 @@ button,
   white-space: nowrap;
 }
 
+/* LAYOUT STYLES */
+
 .app-wrapper {
-  background-color: mediumslateblue;
+  background-color: #eeebff;
   border-radius: 2rem;
-  width: 30rem;  
+  width: clamp(10rem, calc(80% + 2rem), 40rem);  
   margin: 0 auto;
   margin-block: 4rem;
   padding-block: 1rem 2rem;
@@ -70,6 +87,9 @@ h2 {
 
 .todo-form {
   margin-block-end: 2rem;
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
 }
 
 input,
@@ -79,10 +99,12 @@ button {
   padding: 0.5rem;
 }
 
-
 .input-wrapper {
   margin: 0 auto;
-  width: fit-content;
+  width: fit-content;  
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
 }
 
 ul {
@@ -90,15 +112,10 @@ ul {
   padding: 0;
 }
 
-li {
-  list-style: none;
-}
-
 .viewTemplate {
   list-style: none;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   margin: 0.5rem 2rem;
 }
 
@@ -107,7 +124,7 @@ li {
 }
 
 .btn-group-view {
-  width: fit-content;
+    width: fit-content;
 }
 
 .editingTemplate {  
@@ -124,7 +141,25 @@ input.todo-text {
 }
 
 .clearButton {
-  width: max-content;
-  margin: 0 auto;
   margin-block-end: 0.2rem;
+  margin-inline-end: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Media queries for all screens except very small mobile */
+
+@media (min-width: 500px) {
+
+  .viewTemplate {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .clearButton {
+    justify-content: center;
+    margin-inline-end: 0;
+  }
+
 }
