@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
+// Placeholder data displayed on page load
+
 const DATA = [
   { id: "todo-0", name: "Write code", completed: true },
   { id: "todo-1", name: "Drink coffee", completed: false },

@@ -2,17 +2,17 @@ import React, { useState } from "react";
 
 function Form(props) {
 
+  // Displays editing input field as blank
+
   const [name, setName] = useState("");
+
+  // Tracks characters typed in the input field and displays them
 
   function handleChange(e) {
     setName(e.target.value);
-  }  
+  } 
 
-  /* function handleSubmit(e) {
-    e.preventDefault();
-    props.addTask(name);
-    setName("");
-  } */  
+  // Only allows a task to be submitted if the field is not empty
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -22,7 +22,9 @@ function Form(props) {
       props.addTask(name);
       setName("");
     }
-  } 
+  }
+
+  // Base html for the form
 
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
@@ -39,7 +41,9 @@ function Form(props) {
             value={name}
             onChange={handleChange}
           />
-          <button type="submit" className="btn-add">
+          <button 
+            type="submit" 
+            className="btn-add">
             Add
           </button>          
         </div>        

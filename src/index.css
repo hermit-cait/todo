@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
+:root {
+  --bg-colour: #eeebff;
+  --select-colour: #3fffb2;
+  --focus-colour: #ae57ff;
+  --h1-colour-mobile: #8400ff;
+  --h1-colour-desktop: #000000;
+}
+
 body {
-  background-image: url("background.png");
-  background-size: 32rem;
+  background-color: var(--bg-colour);
   margin: 0;
   font-family: Rubik;
   -webkit-font-smoothing: antialiased;
@@ -26,11 +33,12 @@ label::selection,
 input::selection,
 button::selection,
 span::selection { 
-  background-color: #3fffb2;
+  background-color: var(--bg-colour);
 }
 
 h1 {
-  font-size: 3rem;
+  color: var(--h1-colour-mobile);
+  font-size: 4rem;
   font-weight: 500;
 }
 
@@ -59,7 +67,7 @@ li {
 
 input:focus,
 button:focus {  
-  outline: 4px solid #8400ff;
+  outline: 4px solid var(--focus-colour);
 }
 
 .visually-hidden {
@@ -75,7 +83,6 @@ button:focus {
 /* LAYOUT STYLES */
 
 .app-wrapper {
-  background-color: #eeebff;
   border-radius: 2rem;
   width: clamp(10rem, calc(80% + 2rem), 40rem);  
   margin: 0 auto;
@@ -127,12 +134,12 @@ ul {
 }
 
 .btn-group-view {
-    width: fit-content;
+  width: fit-content;
 }
 
 .editingTemplate {  
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   margin: 0.5rem 2rem;
 }
@@ -154,6 +161,27 @@ input.todo-text {
 
 @media (min-width: 500px) {
 
+  body {
+    background-image: url("background.png");
+    background-size: 32rem;
+  }
+
+  h1 {
+    color: var(--h1-colour-desktop);
+    font-size: 3rem;
+  }
+  
+  input,
+  label,
+  button,
+  ::placeholder {
+    font-size: 1.2rem;    
+  }
+
+  .app-wrapper {
+    background-color: var(--bg-colour);
+  }
+
   .viewTemplate {
     flex-direction: row;
     justify-content: space-between;
@@ -161,7 +189,7 @@ input.todo-text {
   }
   
   .checkbox-wrapper {
-    width: clamp(50%, calc(90% - 9rem), 60%);
+    width: clamp(50%, calc(90% - 11rem), 60%);
   }
 
   .clearButton {
