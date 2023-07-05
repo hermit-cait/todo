@@ -4,7 +4,9 @@ const Clear = (props) => {
   const { clearItems } = props;  
   return (    
     <div className='clearButton'>
-      <button onClick={() => clearItems()}>Clear</button>
+      <button onClick={() => clearItems()}>
+        Clear
+      </button>
     </div>
   )
 }
