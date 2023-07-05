@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
 :root {
-  --bg-colour: #eeebff;
-  --select-colour: #3fffb2;
-  --focus-colour: #ae57ff;
-  --h1-colour-mobile: #8400ff;
+  --bg-colour: #ddd;
+  --select-colour: #ff77b2;
+  --focus-colour: #ff0062;
+  --h1-colour-mobile: #ff0062;
   --h1-colour-desktop: #000000;
 }
 
@@ -12,8 +12,6 @@ body {
   background-color: var(--bg-colour);
   margin: 0;
   font-family: Rubik;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* TEXT STYLES */
@@ -33,12 +31,12 @@ label::selection,
 input::selection,
 button::selection,
 span::selection { 
-  background-color: var(--bg-colour);
+  background-color: var(--select-colour);
 }
 
 h1 {
   color: var(--h1-colour-mobile);
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 500;
 }
 

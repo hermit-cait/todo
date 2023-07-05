@@ -42,8 +42,8 @@ function Form(props) {
             onChange={handleChange}
           />
           <button 
-            type="submit" 
-            className="btn-add">
+            type="submit"
+            id="submit">
             Add
           </button>          
         </div>        

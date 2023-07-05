@@ -1,7 +1,7 @@
 import React from "react";
 
 const Clear = (props) => {
-  const { clearItems } = props;
+  const { clearItems } = props;  
   return (    
     <div className='clearButton'>
       <button onClick={() => clearItems()}>Clear</button>

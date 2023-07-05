@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useState, useEffect } from "react";
 import Form from "./components/Form";
 import Todo from "./components/Todo";
 import Clear from "./components/Clear";
@@ -8,12 +8,26 @@ function App(props) {
 
   const [tasks, setTasks] = useState(props.tasks);
 
+  // Fetches list data from localStorage if there is any, otherwise an empty array is created for it
+
+  if (localStorage.getItem('tasks') == null) {
+    var taskStorage = [];
+  } else {
+    taskStorage = JSON.parse(localStorage.getItem('tasks'));
+  }
+
   // Creates a new task... gives it a unique id... sets it's status to "not completed"... and finally appends it to the existing task list
 
   function addTask(name) {
     const newTask = { id: `todo-${nanoid()}`, name, completed: false };
     setTasks([...tasks, newTask]);
   }    
+
+  // Stores new task in localStorage
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks])
 
   // Allows a task name to be changed and then updates the task list
 
@@ -48,12 +62,14 @@ function App(props) {
   function deleteTask(id) {
     const remainingTasks = tasks.filter((task) => id !== task.id);
     setTasks(remainingTasks);
+    localStorage.setItem('tasks', JSON.stringify(remainingTasks));
   } 
 
   // Clears list by saving a blank array to the variable
 
   function clearItems() {
     setTasks([]);
+    localStorage.clear();
   }
 
   // The Todo component contains all the necessary data relevant to each list entry... it also contains all the possible functions that may be used to manipulate it
