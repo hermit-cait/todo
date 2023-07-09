@@ -11,7 +11,6 @@
 body {
   background-color: var(--bg-colour);
   margin: 0;
-  font-family: Rubik;
 }
 
 /* TEXT STYLES */
@@ -100,6 +99,11 @@ h2 {
   align-items: center;
 }
 
+.input,
+.todo-text {
+  width: clamp(4rem, 85%, 100vw);
+}
+
 input,
 button {
   margin: 0.5rem;
@@ -132,7 +136,9 @@ ul {
 }
 
 .btn-group-view {
-  width: fit-content;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .editingTemplate {  
@@ -144,15 +150,11 @@ ul {
 
 input.todo-text {
   background-color: transparent;
-  width: fit-content;
-  margin-inline-start: 1.2rem;
 }
 
 .clearButton {
-  margin-block-end: 0.2rem;
-  margin-inline-end: 2rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 /* Media queries for all screens except very small mobile */

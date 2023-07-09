@@ -8,26 +8,26 @@ function App(props) {
 
   const [tasks, setTasks] = useState(props.tasks);
 
-  // Fetches list data from localStorage if there is any, otherwise an empty array is created for it
-
-  if (localStorage.getItem('tasks') == null) {
-    var taskStorage = [];
-  } else {
-    taskStorage = JSON.parse(localStorage.getItem('tasks'));
-  }
-
   // Creates a new task... gives it a unique id... sets it's status to "not completed"... and finally appends it to the existing task list
 
   function addTask(name) {
     const newTask = { id: `todo-${nanoid()}`, name, completed: false };
     setTasks([...tasks, newTask]);
-  }    
+  }
 
-  // Stores new task in localStorage
+  // Saves the new task to localStorage each time one is added
 
+  if (localStorage.getItem('storage') == null) {
+    var storedItems = [];
+  } else {
+    storedItems = JSON.parse(localStorage.getItem('storage'));
+  }
+
+  const [storage, setStorage] = useState(storedItems);
+  
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks])
+    localStorage.setItem('storage', JSON.stringify(tasks))
+  }, [storedItems])
 
   // Allows a task name to be changed and then updates the task list
 
@@ -62,7 +62,7 @@ function App(props) {
   function deleteTask(id) {
     const remainingTasks = tasks.filter((task) => id !== task.id);
     setTasks(remainingTasks);
-    localStorage.setItem('tasks', JSON.stringify(remainingTasks));
+    localStorage.setItem('storage', JSON.stringify(remainingTasks))
   } 
 
   // Clears list by saving a blank array to the variable
@@ -74,7 +74,7 @@ function App(props) {
 
   // The Todo component contains all the necessary data relevant to each list entry... it also contains all the possible functions that may be used to manipulate it
     
-  const taskList = tasks.map((task) => (
+  var taskList = tasks.map((task) => (
     <Todo
       id={task.id}
       name={task.name}
@@ -84,16 +84,15 @@ function App(props) {
       deleteTask={deleteTask}
       editTask={editTask}
     />
-  ));     
+  )); 
 
   // Base html for app
 
   return (
     <div className="app-wrapper">
       <h1>to-do list</h1>
-      <Form addTask={addTask} />
+      <Form addTask={addTask} storage={storage} setStorage={setStorage}/>
       <ul
-        role="list"
         className="list"
         aria-labelledby="list-heading">
         {taskList}
